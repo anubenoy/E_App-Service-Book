@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HOME</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<style>
+		body {font-family: Arial, Helvetica, sans-serif;}
+
+.footer{
+	position:relative; 
+	top:900px;
+ 	bottom:0px; 
+	width:100%;
+	height:200px;
+	overflow:hidden;
+	padding:2px 370px;
+	box-sizing: border-box;
+	background-color: #00cc00;
+	}
+#img_footer{
+		position:absolute; 
+ 		bottom:0px; 
+  		left:-1px;
+		float:left;
+	}
+.navbar {
+  position:relative;
+  top:-339px; 
+  left:0px;
+  width: 100%;
+  
+  background-color: rgb(0,0,0,0.5);
+  overflow:auto;
+
+ 
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.device a {
+  float: center;
+  padding: 12px;
+  color: #00cc00;
+  text-decoration: none;
+  font-size: 20px;
+}
+.headerTitle{
+		position:absolute; 
+  		top:200px; 
+  		left:290px;
+		font-size:50px;
+		font-family:Georgia;
+		font-weight:600;
+		color:white;
+		
+}
+.headerTitleBox{
+		
+		background-color:rgb(0,0,0,.5);
+		height:100%;
+		width:100%;
+	}
+
+.headerBox{
+	position:relative;
+	background-image:url(doctor_1.jpg);
+	background-size:cover;
+	height:340px;
+}
+#device{
+	position:relative;
+	top:20px;
+	}
+device.caption{
+	color:grey;
+	}
+#contacts{
+	position:absolute;
+	top:10px;
+	width:100%;
+
+	}
+.container{
+	position:relative;
+	top:140px;
+}
+.login_home{
+	position:relative;
+	top:20px;
+}
+
+.step{
+	position:relative;
+	left:120px;
+	color:grey;
+	font-style:oblique;
+	font-weight:bold;
+	
+	
+}
+	
+	</style>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="headerBox">
+
+		<div class="headerTitleBox">
+		<div class="headerTitle">Your E-appliance Doctor</div>
+		</div>
+		
+		
+		<div class= "navbar"> 
+		<nav>
+		 <a class="active" href="home_new.htm"><i class="fa fa-fw fa-home"></i> Home</a> 
+ 		 <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
+ 		 <a href="home_new.htm#contacts"><i class="fas fa-phone"></i> Contact</a> 
+  		 <a href="index.html"><i class="fa fa-fw fa-user"></i> Login</a>
+
+		</nav>
+		</div>
+		
+		
+	</div>
+	
+		
+
+<div id="device" class="container">
+<center>
+	<div class="row">
+    	<div class="col-sm-12" style="background-color:white;">
+		<caption id="table_caption"><h2 class="step">1. Choose your device. </h2></caption></div></div>
+	<br><br><br><br><br>
+	<div class="row">
+        <div class="col-sm-5" style="background-color:white;">	
+		<a href="device_select.php" name="device" value="mobile"><i class='fas fa-mobile-alt' style='font-size:180px;color:#80ff80;'></i><br><br><center>Mobile<center></a></div>	
+	<div class="col-sm-2">
+		<table style="border:none; height:180px; border-right:2px solid green"><td>&nbsp <br><br></td></table> </div>
+    	<div class="col-sm-5" style="background-color:white;">
+		<a href="device_select.php"  name="device" value="laptop"><i class='fas fa-laptop' style='font-size:180px; color:#80ff80;'></i><p><center>Laptop<center></p></a> 	</div>
+	</div>
+</center>
+</div>
+	
+
+<div class="container" id="login">
+		<caption class="login_cap"><h3 class="step" >2. Register to lodge your compliant.</h2></caption>
+		
+		<form action="login.php" method="POST" class="login_home">
+			
+		  <div class="form-group">
+			<label for="username">User Name:</label>
+			<input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+		  </div>
+		  <div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+		  </div>
+		  
+		  <button type="submit" class="btn btn-default">Submit</button>
+		  <a href="register.php">Click here to Register</a>
+		</form>
+	  </div>
+
+
+<div class="footer">
+		<div class="logo"><img src="capture3.PNG" alt="e-doc" id="img_footer" width="300" height="200"></div>
+		<div id="contacts">
+					<h3 style="color:#80ff80;">Contact Us</h3>
+					<i class='fas fa-phone' style='font-size:20px;color:white;'> Phone_no: 6356897412</i><br>
+					<i class='fa fa-fw fa-envelope' style='font-size:20px;color:white;'>Email: edoc@ac.in</i><br>
+		</div>
+		
+
+
+</div>
+		
+        	
+       			 
+</body>
+</html>

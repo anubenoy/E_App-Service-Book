@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="register_style.css">
+    </head>
+<script>
+            function validate()
+{
+		    
+var patterns=[
+
+/^[a-zA-Z]+$/,
+/^[a-zA-Z0-9$&+,:;=?@#|'<>.-^*()%!]+$/,
+
+/^([A-Za-z0-9\.]{4,30})+@[a-z]+\.+[a-z]+$/,
+/^(?=.*[!@#$%^&*(),.?":{}|<>\ )(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+
+ /^(?=.*[!@#$%^&*(),.?":{}|<>\ )(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+         
+   ];
+		   
+ var fields=["NAME","USERNAME","EMAIL should be somthing@somthing.com","PASSWORD","CONFIRM PASSWORD"];
+
+	 for(i=0;i<=4;i++){
+
+			    var el=document.getElementById(i).value;
+
+			        if(el==""){
+
+				        alert(fields[i]+" field is empty");
+
+				        return false;
+
+                    			}
+                   
+				else if(document.getElementById(3).value != document.getElementById(4).value){
+
+                       		 alert("password dont match");
+   
+                    		 return false;
+                    
+				}
+
+			        else{
+
+				        var patt=patterns[i];
+
+				        if(!el.match(patt)){
+
+					        alert(fields[i]+" pattern error");
+
+					        return false;
+
+				        }
+
+			        }
+ 
+               }
+	        }
+        
+
+</script>
+    <body>
+        <div class="registerBox">
+        
+            <form  method="POST">
+                <h1>Sign Up</h1>
+                <input type="text" id="0" placeholder="Name">
+                <input type="text" id="1" placeholder="Username">
+                <input type="email" id="2" placeholder="Email">
+                <input type="password" id="3" placeholder="Password">
+                <input type="password" id="4" placeholder="Confirm Password">
+                <input type="submit" value="Sign Up" onclick="validate()">
+            
+            </form>
+        </div>
+    </body>
+</html>

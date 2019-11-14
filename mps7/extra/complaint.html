@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Complaint</title>
+  <link rel="stylesheet" href="home_style.css">
+	<style>
+		body{
+			background-color:#b3ffb3;
+			
+			}
+		fieldset{
+				border:2px solid #00cc00;
+				margin:40px 80px;
+				height:340px;
+				width:500px;
+				border-radius:30px;
+				background-color:white;
+			}
+		legend{
+			margin-left:5%;
+			font-family:forte;
+			letter-spacing:2px;
+			font-size:27px;
+			
+			
+		}
+		*{
+			color:#00cc00;
+			font-family:georgia;
+			font-size:20px;
+		}
+		input,textarea{
+			border:none;
+			border-bottom: 1px solid #ccccb3;
+			text-align:center;
+			width:100%;
+			margin-bottom: 40px;
+			
+			
+		}
+		.complaint_text{ width:70%;
+				
+				margin:60px 80px;}
+		#complaintRegister{
+				position:relative;
+				top:40px;
+				left:20px;
+				}
+		.complaint_text_child{
+				position:absolute;
+				top:170px;
+				left:850px;
+				}
+		i{ color:white;}
+		
+		
+	</style>
+	  <link rel="stylesheet" href="home_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<body>
+
+<div class= "navbar" style="width:100%; top:0; left:0;"> 
+		<nav>
+		 <a class="active" href="home_new.htm"><i class="fa fa-fw fa-home"></i> Home</a> 
+ 		 <a href="bookService.html"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
+ 		 <a href="home_new.htm#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+  		 <a href="index.html"><i class="fa fa-fw fa-user"></i> Login</a>
+
+		</nav>
+		</div>
+	<form id="complaintRegister">
+	
+
+	<fieldset>
+	<legend> Register Complaint </legend>
+		<div class="complaint_text">
+			<input type="text" name="modelNo" placeholder="Model No'"><br>
+			<input type="text" name="deviceName" placeholder="Device Name'"><br>
+			<textarea  rows="0" cols="20" name="complaint" placeholder="Complaint"></textarea>
+		</fieldset>
+			<div class="complaint_text_child">
+				<p> Report goes here </p>
+			</div>
+		</div>
+		
+</body>
+</html>
