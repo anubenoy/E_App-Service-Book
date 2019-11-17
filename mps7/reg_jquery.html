@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="register_style.css">
+    <script>  
+     $(function(){
+           
+            $('#name').focusout(function(){checkName();});
+            $('#username').focusout(function(){checkUserName();});
+            $('#email').focusout(function(){checkEmail();});
+            $('#password').focusout(function(){checkPassword();});
+            $('#ConfirmPass').focusout(function(){checkConfirmPass();});
+            $('#profile_pic').focusout(function(){checkImage();});
+    
+            function err(){
+                $(document).ready(function(){$('[data-toggle="popover"]').popover();});
+            }
+            
+    
+             function checkName()
+            {
+               
+                elem=$("#name").val();
+                x=$("#err1");
+                patt=/^[a-zA-Z\. ]+$/;
+                
+                if(elem==" " || !elem.match(patt))
+                {
+                         x.style.display = "block";
+                         //err();
+                         
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }
+            
+           function checkUserName()
+            {
+               
+                elem=$("#username").val();
+                x=$("#err2");
+                patt=/^[a-zA-Z0-9$&+,:;=?@#|'<>.-^*()%!]+[0-9]+$/;
+                
+                if(elem==" " || !elem.match(patt))
+                {
+                         x.style.display = "block";
+                         err();
+                         
+            
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }
+    
+         function checkEmail()
+            {
+               
+                elem=$("email").val();
+                x=$("err3");
+                patt=/^([A-Za-z0-9\.]{4,30})+@[a-z.]+\.+[a-z]+$/;
+                
+                if(elem==" " || !elem.match(patt))
+                {
+                         x.style.display = "block";
+                         err();
+                         
+           
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }
+    
+            
+            function checkPassword()
+            {
+               
+                elem=$("#password").val();
+                x=$("#err4");
+                patt=/^(?=.*[!@#$%^&*(),.?":{}|<>\ )(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+                
+                if(elem==" " || !elem.match(patt))
+                {
+                         x.style.display = "block";
+                         err();
+                         
+            
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }
+            function checkConfirmPass()
+            {
+               
+                
+                x=$("#err5");
+                        
+                if(($("#password").val())!=($("#ConfirmPass").val()))
+                {
+                         x.style.display = "block";
+                         err();
+                       
+           
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }
+            function checkImage()
+            {
+               
+                elem=$("#profile_pic").val();
+                x=$("#err6");
+                patt=/\.(jpe?g|png|JPE?G|PNG)$/;     
+                if(!elem.match(patt))
+                {
+                         x.style.display = "block";
+                         err();
+                         
+                         return false;
+                } 
+    
+                  x.style.display="none" ;
+                  return true; 
+            }   
+            
+                    
+        });                     
+            
+    </script>
+    </head>
+    
+    <body>
+
+        <div class="registerBox">
+        
+            <form  method="POST" enctype="multipart/form-data">
+                <h1>Sign Up</h1>
+                <div style="position:relative;">
+                    <input type="text" id="name" name="name" placeholder="Name" >
+                    <div class="container">
+                         <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err1" style="display:none; position:absolute;top:10px; right:-10px;"data-content="Invalid name!"><img src="error.png" height="20px" width="20px"></a>
+                    </div>
+                </div>
+                <div style="position:relative;">
+                        <input type="text" id="username" name="username"  placeholder="Username">
+                        <div class="container">
+                             <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err2" style="display:none; position:absolute;top:10px; right:-10px;"title="Invalid user! "data-content="eg:xyz12"><img src="error.png" height="20px" width="20px"></a>
+                        </div>
+                    </div>
+                 <div style="position:relative;">
+                        <input type="email" id="email" name="email"  placeholder="Email">
+                        <div class="container">
+                             <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err3" style="display:none; position:absolute;top:10px; right:-10px;"data-content="Invaild Email! eg:something@something.com"><img src="error.png" height="20px" width="20px"></a>
+                        </div>
+                    </div>
+                  <div style="position:relative;">
+                        <input type="password" id="password"  name="password"  placeholder="Password">
+                        <div class="container">
+                             <a href="javascript:err()" data-toggle="popover" data-trigger="focus" id="err4" style="display:none; position:absolute;top:10px; right:-10px;"data-content="Invalid! eg:#Ay&iou31 min:8chars "><img src="error.png" height="20px" width="20px"></a>
+                        </div>
+                    </div>   
+                <div style="position:relative;">
+                        <input type="password" id="ConfirmPass" name="confirm_password"  placeholder="Confirm Password">
+                        <div class="container">
+                             <a href="javascript:err()" data-toggle="popover"  data-trigger="focus" id="err5" style="display:none; position:absolute;top:10px; right:-10px;"data-content="Password don't match!"><img src="error.png" height="20px" width="20px"></a>
+                        </div>
+                    </div>   
+           <div style="position:relative;">
+                        
+                        <input type="file" id="profile_pic"  name="file"  value="User Image">
+                        
+                        <div class="container">
+                             <a href="javascript:err()" data-toggle="popover"  data-trigger="focus" id="err6" style="display:none; position:absolute;top:10px; right:-10px;"data-content="Invalid format! eg:ex.jpg/.png"><img src="error.png" height="20px" width="20px"></a>
+                        </div>
+                    </div>
+                <input type="submit"  value="Sign Up" name="btn_submit">
+            
+            </form>
+        </div>
+    </body>
+</html>
