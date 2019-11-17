@@ -7,10 +7,12 @@
 
 	
 	$sql="select * from login_tbl where username='$username' and password='$password'";
-	if(mysqli_query($con,$sql))
+	if($result=mysqli_query($con,$sql))
 	{ 
-		
-		
+		while($row=mysqli_fetch_array($result))
+					{
+						$user_type=$row['user_type'];
+					}
 	
 		$sql="select * from register_tbl where login_id in (select login_id from login_tbl where username='$username' and password='$password')"; 
 		if($result=mysqli_query($con,$sql))
@@ -20,7 +22,17 @@
 						$_SESSION["username"]=$row['name'];
 						$_SESSION["file"]='uploads/'.$row['file'];
 						$_SESSION["login_id"]=$row['login_id'];
-						header("location:complaint.php");
+						if($user_type=='customer' || $user_type=='admin' ){
+							header("location:complaint.php");
+						}
+						else if($user_type=='technician')
+						{
+							header("location:response.php");
+						}
+						else
+						{
+							header("location:index.html");
+						}
 					}
 			}
 			

@@ -22,15 +22,9 @@ session_start();
        
           $login_id=$_SESSION['login_id'];
         
-          $sql2="select * from register_tbl where login_id= '$login_id'";
-          if($result2=mysqli_query($con,$sql2))
-          {  
-          while($row=mysqli_fetch_array($result2))
-             {
-                $_SESSION["reg_id"]=$row["reg_id"];
-            }
-            $reg_id= $_SESSION["reg_id"];
-            $sql3="insert into complaint_tbl(reg_id,model_no,complaint) values ($reg_id, '$model_no','$complaint')";
+          
+    
+            $sql3="insert into complaint_tbl(login_id,model_no,complaint) values ($login_id, '$model_no','$complaint')";
             if(mysqli_query($con,$sql3))
           { 
             ?>
@@ -40,7 +34,7 @@ session_start();
                     </script>
             <?php 
                  }
-         }
+         
         
         mysqli_close($con);
         ?>
