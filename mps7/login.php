@@ -25,7 +25,7 @@
 						if($user_type=='customer' || $user_type=='admin' ){
 							header("location:complaint.php");
 						}
-						else if($user_type=='technician')
+						else if($user_type=='technician' || $user_type=='admin' )
 						{
 							header("location:response.php");
 						}

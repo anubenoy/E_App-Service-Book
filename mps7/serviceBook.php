@@ -85,9 +85,9 @@ if(isset($_SESSION['login_id']))
 
 <div class= "navbar" style="width:100%; top:0; left:0;"> 
 		<nav>
-		 <a class="active" href="home_new.htm"><i class="fa fa-fw fa-home"></i> Home</a> 
+		 <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a> 
  		 <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
- 		 <a href="home_new.htm#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+ 		 <a href="index.php#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
 		 <a href="logout.php" id="logout"><i class="fa fa-fw fa-user"></i> Logout</a>
 		
 		<div class="welcome_box">
@@ -111,7 +111,7 @@ if(isset($_SESSION['login_id']))
 			<textarea  rows="5" cols="20" name="serviceCenter" placeholder="Possible Service Centers"></textarea>
 		</fieldset>
 			<div class="serviceBox_text_child">
-				<p> Report goes here </p>
+				<p> Address goes here </p>
 			</div>
 		</div>
 		
@@ -124,7 +124,7 @@ if(isset($_SESSION['login_id']))
  		{?>
 			<script>
 			alert("Already Logout! \n Login to continue.");
-			window.location.href="index.html";
+			window.location.href="index.php";
 			</script>
 			
 			<?php
