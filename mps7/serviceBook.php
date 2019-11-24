@@ -2,13 +2,20 @@
 session_start();
 if(isset($_SESSION['login_id']))
 {
-	
 	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Book Service</title>
   <link rel="stylesheet" href="home_style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		/*$(document).ready(function(){
+		$('#serviceCenter').click(function(){
+			$('#serviceCenter').load("district.php");
+		});
+	});	*/
+	</script>
 	<style>
 		body{
 			background-color:#b3ffb3;
@@ -96,19 +103,23 @@ if(isset($_SESSION['login_id']))
 	</div>
 		</nav>
 		</div>
-	<form id="serviceBox" method="post">
 	
-
+		<form id="serviceBox" method="post">
+	
 	<fieldset>
 	<legend>Choose your service center</legend>
 		<div class="serviceBox_text">
 			<select name="District" >
-			<option>--District--</option>
-			<option>Kottayam</option>
-			<option>Thrissur</option>
+			<option value=" ">--District--</option>
+			<option value="Kottayam"><a href="district.php?dist=Kottayam">Kottayam</a></option>
+			<option value="Thrissur">Thrissur</option>
 			</select><br>
 			
-			<textarea  rows="5" cols="20" name="serviceCenter" placeholder="Possible Service Centers"></textarea>
+			<select id="serviceCenter">
+				<option value=" ">--service centers--</option>
+			</select>
+					
+
 		</fieldset>
 			<div class="serviceBox_text_child">
 				<p> Address goes here </p>

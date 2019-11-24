@@ -20,15 +20,21 @@
 				while($row=mysqli_fetch_array($result))
 					{
 						$_SESSION["username"]=$row['name'];
-						$_SESSION["file"]='uploads/'.$row['file'];
-						$_SESSION["login_id"]=$row['login_id'];
-						if($user_type=='customer' || $user_type=='admin' ){
+						$_SESSION["file"]='uploads/'.$row['file'];//load image after login
+						$_SESSION["file_check"]=$row['file'];//used during edit profile
+						$_SESSION["login_id"]=$row['login_id'];//check if session expired
+						
+						if($user_type=='customer' ){
 							header("location:complaint.php");
 						}
-						else if($user_type=='technician' || $user_type=='admin' )
+						else if($user_type=='technician')
 						{
 							header("location:response.php");
 						}
+						/*else if($user_type=='admin' )
+						{
+							header("location:admin.php");
+						}*/
 						else
 						{
 							header("location:index.html");
