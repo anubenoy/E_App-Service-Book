@@ -1,8 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION['login_id']))
-{
-	?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,14 +72,14 @@ if(isset($_SESSION['login_id']))
 		}
 		.welcome_txt{
 			position:relative;
-			top:-1px;
+			top:10px;
 			left:4px;
 			float:right;
 			font-size:15px;
 			color:white;
 			font-family:Comic Sans, Comic Sans MS, cursive;
 			font-style: oblique;
-}	
+}
 #construction{
     position:absolute;
     top:42px;
@@ -95,7 +91,7 @@ if(isset($_SESSION['login_id']))
 }	
 #construction_txt{
     
-    margin-top:18%;
+    margin-top:20%;
     margin-left:40%;
     color:white;
     font-size:30px;
@@ -114,18 +110,15 @@ if(isset($_SESSION['login_id']))
 <div class= "navbar" style="width:100%; top:0; left:0;"> 
 		<nav>
 		 <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a> 
-		  <a href="report.php"><i class="fa fa-fw fa-edit"></i>Reports</a>
-		  <a href="complaint.php"><i class="fa fa-fw fa-edit"></i> Complaints</a> 
-		 <a href="logout.php" id="logout"><i class="fa fa-fw fa-user"></i> Logout</a>
+ 		 <a href="serviceBook.html"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
+ 		 <a href="index.php#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+		 
 		
-		<div class="welcome_box">
-    		<img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:35px;width:35px;margin-right:-14px;margin-top:4px;" />
-			<div class="welcome_txt"><a href="account.php" class="welcome_txt"><?php echo ucwords($_SESSION["username"]);?></a></div>	
-	</div>
+	
 		</nav>
 		</div>
-	
-	<div id="2con">
+    
+    <div id="2con">
 		<form id="serviceBox" method="post">
 	
 	<fieldset>
@@ -146,23 +139,12 @@ if(isset($_SESSION['login_id']))
 			<div class="serviceBox_text_child">
 				<p> Address goes here </p>
 			</div>
-		</div>
+        </div>
+    </div>
 </div>
-		<div id="construction">
-    		<h2 id="construction_txt">Under Construction</h2>
-	</div>
-		
+<div id="construction">
+    <h2 id="construction_txt">Under Construction</h2>
+</div>	
 </body>
 </html>
 
-<?php
-	}
-	else
- 		{?>
-			<script>
-			alert("Already Logout! \n Login to continue.");
-			window.location.href="index.php";
-			</script>
-			
-			<?php
-		}?>

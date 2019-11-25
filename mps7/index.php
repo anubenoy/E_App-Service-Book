@@ -1,6 +1,7 @@
 <?php
 session_start();
 session_destroy();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +90,8 @@ session_destroy();
 
 
 #device{
-        margin-top:4px;
+		margin-top:13px;
+		
 	} 
 
 #device a {
@@ -104,10 +106,12 @@ session_destroy();
 	font-style:oblique;
 	font-weight:bold;
     text-align:center;
-    margin-left:5px;
-    color:black;
-    text-shadow:1px 2px 2px grey;	
-    } 
+    
+    color:smokywhite;
+    text-shadow:3px -2px 1px black;	
+	} 
+	
+	
 #contacts{
 	padding:7px 0px;
 	text-align: left;
@@ -123,10 +127,25 @@ session_destroy();
 }
 #btn_device{border:none;
 				background:white;}
+
 			
 
 	</style>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script>
+	function fun(){
+		<?php 
+			$_SESSION['val']="Mobile";
+		?>
+	//	alert("<?php echo $_SESSION['val'] ?>")
+	}
+	function funn(){
+		<?php 
+			$_SESSION['val']="Laptop";
+		?>
+		//alert("<?php echo $_SESSION['val'] ?>")
+	}
+ </script>
 </head>
 <body>
 
@@ -140,7 +159,7 @@ session_destroy();
 		<div class= "navbar"> 
 		<nav>
 		 <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a> 
- 		 <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
+ 		 <a href="serviceBook.html"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
  		 <a href="index.php#contacts"><i class="fas fa-phone"></i> Contacts</a> 
   		 <a href="index.html" style='float:right'><i class="fa fa-fw fa-user"></i> Login</a>
 		<a href="index.html" style='float:right'><i class="fa fa-fw fa-user"></i> Technician</a>
@@ -161,11 +180,10 @@ session_destroy();
 	<br><br><br><br><br>
 	<div class="row">
         <div class="col-sm-5" style="background-color:white;">	
-		<a href="fetch.php?id=mobile"><i class='fas fa-mobile-alt' style='font-size:180px;color:#00cc00;'></i><br><br><center>Mobile<center></a></div>	
-	<div class="col-sm-2">
+		<button onClick="fun()" id="btn_device"><i class='fas fa-mobile-alt' style='font-size:180px;color:#00cc00;'></i><br><br><center>Mobile<center></button></div>		<div class="col-sm-2">
 		<table style="border:none; height:180px; border-right:2px solid green"><td>&nbsp <br><br></td></table> </div>
     	<div class="col-sm-5" style="background-color:white;">
-		<a href="fetch.php?id=laptop"><i class='fas fa-laptop' style='font-size:180px; color:#00cc00;'></i><p><center>Laptop<center></p></a>	</div>
+		<button onClick="funn()" id="btn_device"><i class='fas fa-laptop' style='font-size:180px; color:#00cc00;'></i><p><center>Laptop<center></p></button></div>	
 	</div>
 </center>
 </div>
@@ -190,7 +208,7 @@ session_destroy();
 </div>
 
 	<div class="container">
-		<caption class="step_cap"><h2 class="step" ><b>Step 3.</b>Choose your nearest service centre.</h2></caption>
+		<caption class="step_cap"><h2 class="step" ><a href="serviceBook.html" style="color:#3d3d29;"><b>Step 3.</b>Choose your nearest service centre.</h2></a></caption>
 		<caption class="step_cap"><h2 class="step" ><b>Step 4.</b>Call to book your service.</h2></caption>
 		<cation class="step_cap"><h2 class="step" ><b>Step 5.</b>Get on with your day.</h2></caption>
     </div>

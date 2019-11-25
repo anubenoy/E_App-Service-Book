@@ -51,7 +51,8 @@ if(isset($_SESSION['login_id']))
 	width:400px;
 	padding:30px 50px;
 	box-sizing: border-box;
-	background:rgba(25,0,0,0.5) ;
+    background:rgba(25,0,0,0.5) ;
+    box-shadow:4px 5px 3px black;
 	
 	
 }
@@ -63,7 +64,8 @@ h3
     padding:-10px 0 20px;
     padding-bottom:30px;
 	color:white;
-	text-align:center;
+    text-align:center;
+    text-shadow:2px 2px 2px black;
 	
 } 
 .registerBox input
@@ -80,7 +82,8 @@ h3
 	outline:none;
 	height:35px;
 	color:#fff;
-	font-size: 16px;
+    font-size: 16px;
+    text-shadow:1px 1px 1px black;
 	
 	
 }
@@ -90,12 +93,13 @@ h3
 	border:1px solid whitesmoke;
     color:whitesmoke;
     font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	background:transparent;
 	cursor:pointer;
 	border-radius:80px;
-	margin-left:80px;
-	margin-top:17px;
+	margin-left:130px;
+    margin-top:17px;
+    
 	
 }
 .registerBox input[type="file"]{
@@ -121,7 +125,8 @@ h3
 	 background:transparent;
 	 outline:none;
 	 color:white;
-	 font-size:15.3px;
+     font-size:15.3px;
+     text-shadow:1px 1px 1px black;
 	
      }
      #pic_btn{
@@ -145,6 +150,7 @@ h3
             {
                 document.getElementById('pic').style.display = "block";
                 document.getElementById('profile_pic').disabled=false;
+                <?php $_SESSION["file_set"]="set";?>
             }
     function edit(){
         document.getElementById('cfpass').style.display = "block";
@@ -170,13 +176,14 @@ h3
     </head>
     
     <body>
+        
 
         <div class="registerBox">
         
-            <form  method="POST" enctype="multipart/form-data" >
+            <form  method="POST" enctype="multipart/form-data" action="update.php">
             <div class="welcome_box" style="position:relative;">
             <button type=button onclick="enable()" id="pic_btn" style="display:none;" value=""> <i class="fa fa-fw fa-edit"></i> </button>
-            <img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:75px;width:75px;margin-top:4px;" />
+            <img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;  box-shadow:2px 2px 3px black;height:75px;width:75px;margin-top:4px;" />
                
 			    <div class="welcome_txt"><h3>My Profile</h3></div>	
 	        </div>    
@@ -232,7 +239,8 @@ h3
                     </div>
                         
                     <input type="button" id="btn1" value="Edit" name="btn_edit" onclick="edit()">  
-                    <a href="update.php"><input type="submit" id="btn2" value="Submit" name="btn_submit" style="display:none;"></a>
+                   <input type="submit" id="btn2" value="Submit" name="btn_submit" style="display:none;">
+                   <a href="report.php" style="color:white;font-size:14px;margin-left:130px;">Click here to go back</a>
 
                     </div>
              

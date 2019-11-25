@@ -39,7 +39,7 @@ if(isset($_SESSION['login_id']))
 		}
 		.welcome_txt{
 			position:relative;
-			top:10px;
+			top:-1px;
 			left:4px;
 			float:right;
 			font-size:15px;
@@ -78,13 +78,12 @@ if(isset($_SESSION['login_id']))
 		<nav>
 		 <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a> 
 		  <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a>
-		  <a href="report.php"><i class="fa fa-fw fa-edit"></i> Complaints</a>  
- 		 <a href="index.php#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+      <a href="complaint.php"><i class="fa fa-fw fa-edit"></i> Complaints</a>
   		 <a href="logout.php" id="logout"><i class="fa fa-fw fa-user"></i> Logout</a>
 		
 		<div class="welcome_box">
-    		<img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:35px;width:35px;margin-top:4px;" />
-			<div class="welcome_txt"><?php echo ucwords($_SESSION["username"]);?></div>	
+    		<img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:35px;width:35px;margin-top:4px;margin-right:-14px;" />
+			<div class="welcome_txt"><a href="account.php" class="welcome_txt"><?php echo ucwords($_SESSION["username"]);?></a></div>	
 	</div>	
 		</nav>
 		</div>
@@ -114,8 +113,18 @@ if(isset($_SESSION['login_id']))
        echo "</table>";
        
     }
-       
+    mysqli_close($con);    
 }
-        mysqli_close($con);
+       
+      
+      else
+         {?>
+          <script>
+          alert("Already Logout! \n Login to continue.");
+          window.location.href="index.php";
+          </script>
+          
+          <?php
+        }?>
         ?>
 

@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['login_id']))
 {?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@ if(isset($_SESSION['login_id']))
 		fieldset{
 				border:2px solid #00cc00;
 				margin:40px 80px;
-				height:340px;
+				height:380px;
 				width:500px;
 				border-radius:30px;
 				background-color:white;
@@ -44,7 +45,7 @@ if(isset($_SESSION['login_id']))
 		}
 		#register_btn,#reset_btn{
 			position:relative;
-			top:70px;
+			top:35px;
 			left:40px;	
 			border:none;
 			outline:none;
@@ -69,7 +70,7 @@ if(isset($_SESSION['login_id']))
 				margin:60px 80px;}
 		#complaintRegister{
 				position:relative;
-				top:40px;
+				top:30px;
 				left:20px;
 				}
 		.complaint_text_child{
@@ -89,10 +90,10 @@ if(isset($_SESSION['login_id']))
 		}
 		.welcome_txt{
 			position:relative;
-			top:10px;
+			top:-1px;
 			left:4px;
 			float:right;
-			font-size:15px;
+			font-size:12px;
 			color:white;
 			font-family:Comic Sans, Comic Sans MS, cursive;
 			font-style: oblique;
@@ -109,14 +110,13 @@ if(isset($_SESSION['login_id']))
 <div class= "navbar" style="width:100%; top:0; left:0;"> 
 		<nav>
 		 <a class="active" href="index.php"><i class="fa fa-fw fa-home"></i> Home</a> 
-		  <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a>
-		  <a href="report.php"><i class="fa fa-fw fa-edit"></i> Complaints</a>  
- 		 <a href="index.php#contacts"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+		  <a href="serviceBook.php"><i class="fa fa-fw fa-edit"></i> Book Service</a> 
+		  <a href="report.php"><i class="fa fa-fw fa-edit"></i> Report</a>   
   		 <a href="logout.php" id="logout"><i class="fa fa-fw fa-user"></i> Logout</a>
 		
 		<div class="welcome_box">
-    		<img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:35px;width:35px;margin-top:4px;" />
-			<div class="welcome_txt"><?php echo ucwords($_SESSION["username"]);?></div>	
+    		<img src=" <?php echo $_SESSION["file"]; ?> " style="border-radius:50%;height:35px;width:35px;margin-right:-14px;margin-top:4px;" />
+			<div class="welcome_txt"><a href="account.php" class="welcome_txt"><?php echo ucwords($_SESSION["username"]);?></a></div>	
 	</div>	
 		</nav>
 		</div>
@@ -127,7 +127,8 @@ if(isset($_SESSION['login_id']))
 	<legend> Register Complaint </legend>
 		<div class="complaint_text">
 			<input type="text" name="modelNo" placeholder="Model No'" required><br>
-			<input type="text" name="deviceName" placeholder="Device Name' required"><br>
+			<input type="text" name="device" value="<?php echo $_SESSION['val'] ?>" required><br>
+			<input type="text" name="deviceName" placeholder="Device Name" required><br>
 			<textarea  rows="0" cols="20" name="complaint" placeholder="Complaint" required></textarea>
 			<input type="submit" value="Register" id="register_btn" name="register_btn">
 			<input type="reset" value="Reset" id="reset_btn" name="reset_btn">
